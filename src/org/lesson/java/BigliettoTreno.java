@@ -1,5 +1,7 @@
 package org.lesson.java;
 
+
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class BigliettoTreno {
@@ -13,7 +15,7 @@ public class BigliettoTreno {
         System.out.print("Quanti anni ha?");
         int age = scan.nextInt();
 
-
+        DecimalFormat format = new DecimalFormat("#.##");
         //settiamo il prezzo finale
 
         double total = rateKm * 0.21;
@@ -24,14 +26,14 @@ public class BigliettoTreno {
 
         //setto l'if per far si di inserire lo sconto in riferimento dell'eta del passeggero
         if (age < 18) {
-            total = total - underDiscount;
-            System.out.println("Il costo del suo biglietto è " + total + "€");
+            total = (total - underDiscount);
+            System.out.println("Il costo del suo biglietto è " + format.format(total) + "€");
 
         } else if (age > 65) {
             total = total - overDiscount;
-            System.out.println("Il costo del suo biglietto è " + total + "€");
+            System.out.println("Il costo del suo biglietto è " + format.format(total) + "€");
         } else {
-            System.out.println("Il costo del suo biglietto è " + total + "€");
+            System.out.println("Il costo del suo biglietto è " + format.format(total) + "€");
         }
         scan.close();
     }
