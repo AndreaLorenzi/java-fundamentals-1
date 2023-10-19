@@ -31,6 +31,18 @@ public class FestaFerragnez {
             System.out.println("Not Found");
 
         }
+
+        // ciclo while
+        int index = 0;
+        while (index < invitatiFesta.length) {
+            if (presenteInvito.equals(invitatiFesta[index])) {
+                found = true;
+                break;
+            }
+            index++;
+        }
+
+        System.out.println(found ? "Benvenuto alla festa" : "Non sei stato invitato");
         //chiudo lo scanner
         scan.close();
     }
