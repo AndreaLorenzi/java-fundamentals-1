@@ -17,6 +17,7 @@ public class FestaFerragnez {
         boolean found = false;
 
 
+        // ciclo for
         for (int i = 0; i < invitatiFesta.length; i++) {
             if (presenteInvito.equals(invitatiFesta[i])) {
                 found = true;
@@ -25,6 +26,7 @@ public class FestaFerragnez {
             ;
 
         }
+        //se trovo l'invitato o meno stampo il risultato
         if (found) {
             System.out.println("Found");
         } else {
@@ -34,10 +36,9 @@ public class FestaFerragnez {
 
         // ciclo while
         int index = 0;
-        while (index < invitatiFesta.length) {
+        while (!found && index < invitatiFesta.length) {
             if (presenteInvito.equals(invitatiFesta[index])) {
                 found = true;
-                break;
             }
             index++;
         }
